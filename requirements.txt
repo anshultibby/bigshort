@@ -1,0 +1,12 @@
+###### Requirements without Version Specifiers ######`
+wheel
+torch
+numpy
+scipy
+pandas
+seaborn
+jupyter
+robin_stocks
+yfinance
+
+###### Requirements with Version Specifiers ######`
