@@ -8,5 +8,8 @@ seaborn
 jupyter
 robin_stocks
 yfinance
+xlrd
+openpyxl
+xlsxwriter
 
 ###### Requirements with Version Specifiers ######`
