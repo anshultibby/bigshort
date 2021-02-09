@@ -1,6 +1,7 @@
 import robin_stocks as r
 import numpy as np
 import pandas as pd
+from datetime import datetime as dt
 
 
 def isfloat(value):
@@ -48,3 +49,9 @@ def append_dicts(base_dict, add_dict):
         else:
             base_dict[key] = [value]
     return base_dict
+
+
+def calc_expiration_days(expire, today):
+    expire = dt.fromisoformat(expire)
+    today = dt.fromisoformat(today)
+    return expire - today

@@ -3,6 +3,7 @@ import math
 import numpy as np
 import pandas as pd
 import robin_stocks as r
+import datetime as dt
 
 
 def remove_unviable_trades(df):
@@ -131,7 +132,7 @@ def compute_profitability(possible, price, mean_move):
     possible['odds'] = possible['exit_value'] / possible['debit']
     possible['price_distance'] = possible['buy_strike'] - price
     possible['exercise_profit'] = ((possible['exit_value'] * 100 / possible.debit))
-    possible['calendar_profit'] = ((possible.buy_strike - price + possible.calendar_moves * 100)) / possible.debit
+    possible['calendar_profit'] = ((possible.buy_strike - price + possible.calendar_moves + sell_price) * 100) / possible.debit
     possible['loss'] = 100
 
     # 100 - [(the max profit / strike price width) x 100].
